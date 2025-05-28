@@ -8,7 +8,7 @@ LDLIBS+=-pthread
 
 all: $(TARGET)
 
-$(TARGET): tc.o
+$(TARGET): echo-client.o
 	$(LINK.cpp) $^ $(LOADLIBES) $(LDLIBS) -o $@
 ifdef ANDROID_NDK_ROOT
 	termux-elf-cleaner --api-level 23 $(TARGET)
